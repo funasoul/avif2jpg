@@ -7,7 +7,7 @@ A CLI tool to convert [AV1 Image File Format (AVIF)](https://aomediacodec.github
 - [sharp # High performance Node.js image processing](https://sharp.pixelplumbing.com/)
 
 ## Download
-Just clone from this repository.
+Clone from this repository and install [sharp](https://sharp.pixelplumbing.com/) by `npm install`.
 ```sh
 git clone https://github.com/funasoul/avif2jpg.git
 cd avif2jpg
