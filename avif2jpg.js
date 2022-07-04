@@ -21,13 +21,13 @@ if (myArgs.length > 1) {
   quality = parseInt(myArgs[1]);
 }
 
-fs.readdir(avifdir, function(err, files) {
-  const avifFiles = files.filter(el => path.extname(el) === '.avif');
-  avifFiles.forEach(function(file) {
+fs.readdir(avifdir, function (err, files) {
+  const avifFiles = files.filter(el => path.extname(el).toLowerCase() === '.avif');
+  avifFiles.forEach(function (file) {
     const jpgfile = avifdir + "/" + file.substring(0, file.lastIndexOf(".")) + ".jpg";
     console.log(avifdir + "/" + file + " => " + jpgfile + " (quality: " + quality + "%)");
     sharp(`${avifdir}/${file}`)
-      .jpeg({ quality: quality })
+      .jpeg({quality: quality})
       .toFile(`${jpgfile}`);
   });
 })
